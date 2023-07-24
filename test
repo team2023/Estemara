@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>توليد رقم عشوائي</title>
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th><input type="checkbox" id="select-all"></th>
+      <th>الاسم</th>
+      <th>البريد الإلكتروني</th>
+      <th>العمر</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="checkbox" class="select-row"></td>
+      <td>أحمد</td>
+      <td>ahmed@example.com</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" class="select-row"></td>
+      <td>محمد</td>
+      <td>mohamed@example.com</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+<button onclick="openModal()">عرض بيانات المحددة</button>
+
+<!-- عنصر Modal -->
+<div id="modal" style="display: none;">
+<form method="post" action="ok.php">
+     <input type="hidden" id="selected-data" name="dataa">
+     <input type="submit" value="okkk" name="okk">
+</form>
+ 
+  <button onclick="saveData()">حفظ</button>
+  <button onclick="closeModal()">إغلاق</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+  // تحديد الخانة في أعلى الجدول لتحديد جميع الصفوف
+  const selectAll = document.getElementById("select-all");
+
+  // تحديد الخانات في الصفوف لتحديد صفوف مفردة
+  const selectRows = document.querySelectorAll(".select-row");
+
+  // الحصول على عنصر Modal HTML
+  const modal = document.getElementById("modal");
+
+  // الحصول على حقل الإدخال المخفي في عنصر Modal HTML
+  const selectedDataField = document.getElementById("selected-data");
+
+  // إضافة حدث onchange للخانة في أعلى الجدول لتحديد جميع الصفوف
+  selectAll.onchange = () => {
+    selectRows.forEach((row) => {
+      row.checked = selectAll.checked;
+    });
+  };
+
+  // إضافة حدث onchange للخانات في الصفوف لتحديد صفوف مفردة
+  selectRows.forEach((row) => {
+    row.onchange = () => {
+      const allChecked = Array.from(selectRows).every((row) => row.checked);
+      selectAll.checked = allChecked;
+    };
+  });
+
+  // إضافة حدث onclick لفتح Modal
+  function openModal() {
+    // استخراج الحقول المحددة
+    const selectedFields = [];
+    selectRows.forEach((row) => {
+      if (row.checked) {
+        const name = row.parentElement.nextElementSibling.textContent;
+        const email = row.parentElement.nextElementSibling.nextElementSibling.textContent;
+        const age = row.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.textContent;
+        selectedFields.push({ name, email, age });
+      }
+    });
+
+    // تعيين القيم في حقل الإدخال المخفي في عنصر Modal HTML
+    selectedDataField.value = JSON.stringify(selectedFields);
+
+    // عرض عنصر Modal HTML
+    modal.style.display = "block";
+  }
+
+  function saveData() {
+  const selectedData = document.getElementById('selected-data').value;
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'ajax.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      console.log(this.responseText);
+    }
+    else{
+        console.log(selectedData);
+    }
+  };
+  xhr.send('selectedData=' + encodeURIComponent(selectedData));
+}
+
+  // إضافة حدث onclick لإغلاق Modal HTML
+  function closeModal() {
+    modal.style.display = "none";
+  }
+</script>
+</body>
+</html>

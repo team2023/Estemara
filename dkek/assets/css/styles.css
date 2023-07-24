@@ -1,0 +1,134 @@
+/* @font-face {
+  font-family: "Scheherazade New";
+  src: url("/fonts/ScheherazadeNew-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Scheherazade New";
+  src: url("/fonts/ScheherazadeNew-Bold.ttf") format("truetype");
+  font-weight: bold;
+} */
+
+@font-face {
+  font-family: "Markazi Text";
+  src: url("../fonts/Markazi-Text-Medium.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Markazi Text";
+  src: url("../fonts/Markazi-Text-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+* {
+  font-family: "Markazi Text", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.redStar {
+  color: red;
+}
+.btn1{
+  background: rgb(3, 6, 56);
+  color:white;
+  font-size: 14px;
+  padding: 7px 5px;
+  border:1px solid rgb(2, 8, 82);
+  border-radius: 1px;
+}
+
+.navbar {
+  height: 6rem;
+  
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.card-header {
+  color: white;
+  background-color: #282d32;
+}
+
+.new-user {
+  margin-right: 45%;
+}
+
+.card {
+  border-color: #282d32;
+}
+
+.nav-text-up {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-text-down {
+  background-color: #282d32;
+  color: white;
+  font-size: 0.9rem;
+  width: 20px;
+}
+
+.btn-secondary{
+  background:#51bcf1;
+}
+
+
+@media (min-width:391px) and  (max-width: 483px) {
+  .brand-1 {
+    width: 4rem;
+    height: 4rem;
+  }
+  .brand-2 {
+    width: 9.5rem;
+    height: 4rem;
+  }
+  .nav-text-up {
+    font-size: 1.3rem;
+  }
+  .nav-text-down {
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width:0px ) and (max-width: 390px) {
+  .nav-text-up {
+    display: none;
+  }
+  .nav-text-down {
+    display: none;
+  }
+}
+.danger{
+  background: red;
+  color: white;
+  padding-top: 10px;
+  
+}
+.success{
+  background: green;
+  color: white;
+  padding-top: 10px;
+  
+}
+.optional{
+ 
+  color: white;
+  padding-top: 10px;
+  
+}
+.head{
+  background:  #51bcf1;
+ align-items: center;
+ justify-content: space-between;
+}
+.info{
+  background: transparent;
+  color: white;
+  padding: 5px;
+}

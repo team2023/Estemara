@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.rtl.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+        function convertToPdf() {
+            const element = document.getElementById('content');
+            const options = {
+                filename: 'output.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', format: 'a4' }
+            };
+
+            html2pdf().set(options).from(element).save();
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <page size="a4">
+
+    </page>
+    <div class="container" id="content">
+        <div class="header">
+
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center w-100">
+            <h3>الوظيفة : علوم الحياة</h3>
+            <p>المعلومات الشخصية</p>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class=" border border-3 border-black w-100 ">
+                    <div class="row p-1">
+                        <div class="col-3">
+                            <p>الاسم:يوسف</p>
+                        </div>
+                        <div class="col-3">
+                            <p>اسم الاب:صفاء</p>
+                        </div>
+                        <div class="col-3">
+                            <p>اسم الجد:ماجد</p>
+                        </div>
+                        <div class="col-3">
+                            <p>اسم اب الجد:علي</p>
+
+                        </div>
+
+                        <div class="col-4">
+                            <p>اسم الام:بديعة</p>
+                        </div>
+                        <div class="col-4">
+                            <p>اسم اب الام:امجد</p>
+                        </div>
+                        <div class="col-4">
+                            <p>اسم جد الام:علي</p>
+                        </div>
+
+
+                        <div class="col-4">
+                            <p>الجنس:ذكر</p>
+                        </div>
+                        <div class="col-4">
+                            <p>تاريخ الولادة:1998-05-04</p>
+                        </div>
+                        <div class="col-4">
+                            <p>محل الولادة:الكاظمية</p>
+                        </div>
+
+
+                        <div class="col-4">
+                            <p>الجنسية:العراق</p>
+                        </div>
+                        <div class="col-4">
+                            <p>القومية:عربي</p>
+                        </div>
+                        <div class="col-4">
+                            <p>الديانة:مسلم</p>
+                        </div>
+
+
+                        <div class="col-4">
+                            <p>رقم البطاقة الوطنية الموحدة:5684524554454</p>
+                        </div>
+                        <div class="col-4">
+                            <p>الرقم العائلي:544يي8ب888545455</p>
+                        </div>
+                        <div class="col-4">
+                            <p>تاريخ اصدار البطاقة الوطنية:1965-05-04</p>
+                        </div>
+                        <div class="col-4">
+                            <p>الحالة الاجتماعية:متزوج</p>
+                        </div>
+                        <div class="col-4">
+                            <p>عدد الأطفال تحت ال18: 4</p>
+                        </div>
+                        <div class="col-4">
+                            <p>عدد الأطفال قوق ال18: 0</p>
+                        </div>
+                        <div class="col-8">
+                            <p>هل انت معيل لأخد افراد العائلة غير الاولاد قانونا:نعم</p>
+                        </div>
+                        <div class="col-4">
+                            <p>صلة القرابة:ابن اختي</p>
+                        </div>
+                        <div class="col-4">
+                            قناة التقديم : القناة العامة
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-3">
+                    <h3>معلومات السكن </h3>
+                </div>
+
+                <div class="border border-3 border-black">
+                    <div class="row p-1">
+                        <div class="col-5">
+                            <p>رقم بطاقة السكن:4565664</p>
+                        </div>
+                        <div class="col-5">
+                            <p>مكتب معلومات:الكاظمية</p>
+                        </div>
+                        <div class="col-4">
+                            <p>المحافظة:بغداد</p>
+                        </div>
+                        <div class="col-4">
+                            <p>القضاء:التاجي</p>
+                        </div>
+                        <div class="col-4">
+                            <p>الحي:سبع البور</p>
+                        </div>
+                        <div class="col-12">
+                            <p>العنوان مع اقرب نقطة دالة:الكاضمية-قضاء التاجي-سبع البور</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center mt-3">
+                    <h3>معلومات التوظيف</h3>
+                </div>
+                <div class="border border-3 border-black">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>هل المتقدم موظف سابق:قطاع عام-عقد</p>
+                        </div>
+                        <div class="col-6">
+                            <p>الشهادة المعتمدة في التعيين:بكالوريوس</p>
+                        </div>
+                        <div class="col-12">
+                            <p>اسم مكان العمل:كاتب في مدرسة </p>
+                        </div>
+                        <div class="col-6">
+                            <p>تاريخ المباشرة:12-5-225</p>
+                        </div>
+                        <div class="col-6">
+                            <p>تاريخ الترك:56-556-5545</p>
+                        </div>
+                        <div class="col-12">
+                            <p>سبب ترك العمل:بعد المكان</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-3 border-black mt-2">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>هل لديك عمل حالي:قطاع خاص-</p>
+                        </div>
+                        <div class="col-6">
+                            <p>الشهادة المعتمدة في التعيين:بكالوريوس</p>
+                        </div>
+                        <div class="col-12">
+                            <p> مكان العمل:كاتب في مدرسة</p>
+                        </div>
+                        <div class="col-12">
+                            <p>تاريخ اشغال العمل:2013-2-02</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-3 border-black mt-2">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>هل قمت بالعمل التطوعي في مجال اختصاصك مع جهة حكومية موثقة؟:نعم</p>
+                        </div>
+                        <div class="col-12">
+                            <p>اسم الجهة الحكومية:مستوصف سبع البور</p>
+                        </div>
+                        <div class="col-12">
+                            <p>مدة العمل بالشهور:5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="convertToPdf()">Convert to PDF</button>
+    </div>
+</body>
+
+</html>
